@@ -1,0 +1,16 @@
+{
+  "videos": [
+    {
+      "id": "f8yropvps",
+      "title": "Resolvendo DESAFIO de VAGA FRONTEND com React, Next JS, Typescript e GraphQL - parte 1",
+      "description": "Nesse vídeo vamos resolver um desafio técnico de uma vaga de desenvolvedor Frontend. O desafio consistia em reproduzir uma interface de um E-Commerce, os pré requisitos incluiam o uso do framework Next JS (https://nextjs.org/) para a construção da aplicação e da biblioteca Styled-Components (https://styled-components.com/),  a qual aproveitamos as features de CSS in JS para componentizar e modularizar nossa aplicação. Além disso, precisamos realizar a integração com a API GraphQL para listagem e filtragem dos produtos, e utilizar recursos como useState e Context API para controle dos estados da aplicação.",
+      "url": "https://www.youtube.com/watch?v=fF-UWgeiELc&t=4425s"
+    },
+    {
+      "id": "f8yropvps",
+      "title": "Live Coding: Replicando interfaces com React JS e CSS",
+      "description": "Nessa live vamos replicar uma interface com animações usando React JS e CSS. Você vai aprender diversos truques e dicas de CSS para construir interfaces incríveis. Além de revisar alguns conceitos da biblioteca para construção de aplicações frontend React JS.",
+      "url": "https://www.youtube.com/watch?v=fF-UWgeiELc&t=4425s"
+    }
+  ]
+}
