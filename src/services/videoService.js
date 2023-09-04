@@ -7,10 +7,13 @@ import { Low, JSONFile } from 'lowdb';
 const __dirname = dirname(fileURLToPath(import.meta.url))
 const file = join(__dirname, '..', 'database', 'db.json')
 
-// Configure lowdb to write data to JSON file
-const adapter = new JSONFile(file)
-const defaultData = { videos: [] }
-const db = new Low(adapter, defaultData)
+const initiateDatabase = () => {
+  // Configure lowdb to write data to JSON file
+  const adapter = new JSONFile(file)
+  const defaultData = { videos: [] }
+  const db = new Low(adapter, defaultData)
+  return db;
+}
 
 const generateId = () => {
   return Math.random().toString(36).substr(2, 9);
@@ -69,7 +72,7 @@ const updateVideo = async (id, fieldsToUpdate) => {
   return newVideo;
 };
 
-const getAllVideos = async () => {
+const getAllVideos = async (db) => {
   await db.read();
   return db.data?.videos ?? [];
 };
@@ -79,5 +82,6 @@ export default {
   updateVideo,
   createVideo,
   validateVideoFields,
-  generateId
+  generateId,
+  initiateDatabase
 }

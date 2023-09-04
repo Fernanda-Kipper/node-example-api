@@ -1,5 +1,7 @@
 import videoService from '../services/videoService.js';
 
+const db = videoService.initiateDatabase();
+
 const createVideo = async (req, res) => {
   try {
     const { title, description, url } = req.body;
@@ -11,7 +13,7 @@ const createVideo = async (req, res) => {
 };
 
 const getAllVideos = async (req, res) => {
-  const videos = await videoService.getAllVideos();
+  const videos = await videoService.getAllVideos(db);
   res.status(200).json(videos);
 };
 
