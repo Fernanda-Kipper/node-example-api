@@ -16,3 +16,19 @@ jobs:
           npm install
           npm run build
           npm run test
+  continuos-delivery:
+    name: Deployment to Lambda Function
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Zip files
+        run: |
+          zip -r deployment.zip .
+      - name: Send to lambda
+        uses: appleboy/lambda-action@v0.1.9
+        with:
+          aws_access_key_id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws_secret_access_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws_region: ${{ secrets.AWS_REGION }}
+          function_name: nodejsApi
+          zip_file: deployment.zip
